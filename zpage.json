@@ -1,0 +1,625 @@
+{
+    "toc": [
+        {
+            "id": "26f57af2-2ec4-4cb4-a7fc-18f2ddcacdc1",
+            "type": "header",
+            "text": "題目",
+            "indentLevel": 0
+        },
+        {
+            "id": "350a743b-d6be-4824-8a1c-be4ec9a53489",
+            "type": "sub_header",
+            "text": "H2",
+            "indentLevel": 1
+        },
+        {
+            "id": "5f8a3b88-cb9d-4bcb-a1a3-6eb23aed16a3",
+            "type": "header",
+            "text": "解答",
+            "indentLevel": 0
+        },
+        {
+            "id": "f7a06446-f44d-4a54-b4a9-9eb722996115",
+            "type": "sub_header",
+            "text": "H2",
+            "indentLevel": 1
+        },
+        {
+            "id": "c9e076bd-f305-4011-8065-c5db2fb54f5e",
+            "type": "header",
+            "text": "標題3",
+            "indentLevel": 0
+        },
+        {
+            "id": "6e72cfe3-f448-464f-bbac-314c32c72f86",
+            "type": "header",
+            "text": "標題4",
+            "indentLevel": 0
+        },
+        {
+            "id": "cdbaed99-b75a-48f9-8d19-abe0359289f5",
+            "type": "header",
+            "text": "標題5",
+            "indentLevel": 0
+        }
+    ],
+    "post": {
+        "block": {
+            "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a": {
+                "value": {
+                    "id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "version": 164,
+                    "type": "page",
+                    "properties": {
+                        "IB`r": [
+                            [
+                                "草稿"
+                            ]
+                        ],
+                        "L<bs": [
+                            [
+                                "解題"
+                            ]
+                        ],
+                        "Zt~c": [
+                            [
+                                "ZeroJudge,Python"
+                            ]
+                        ],
+                        "\\JFL": [
+                            [
+                                "超簡單啦"
+                            ]
+                        ],
+                        "^VBO": [
+                            [
+                                "‣",
+                                [
+                                    [
+                                        "d",
+                                        {
+                                            "type": "datetime",
+                                            "time_zone": "Asia/Taipei",
+                                            "start_date": "2024-01-26",
+                                            "start_time": "14:15"
+                                        }
+                                    ]
+                                ]
+                            ]
+                        ],
+                        "title": [
+                            [
+                                "a001: 哈囉",
+                                [
+                                    [
+                                        "b"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    },
+                    "content": [
+                        "cd0f5845-1508-4ff4-bbb9-aa64d0cf5d51",
+                        "26f57af2-2ec4-4cb4-a7fc-18f2ddcacdc1",
+                        "350a743b-d6be-4824-8a1c-be4ec9a53489",
+                        "911295a7-c5c9-4783-ab6a-e4173c6b41d5",
+                        "5f8a3b88-cb9d-4bcb-a1a3-6eb23aed16a3",
+                        "f7a06446-f44d-4a54-b4a9-9eb722996115",
+                        "475252e3-9c80-4e72-8c3f-0b79669dcf32",
+                        "c9e076bd-f305-4011-8065-c5db2fb54f5e",
+                        "6e72cfe3-f448-464f-bbac-314c32c72f86",
+                        "cdbaed99-b75a-48f9-8d19-abe0359289f5",
+                        "826f6586-8d75-4921-82e8-25f72b9605b5"
+                    ],
+                    "created_time": 1706200490822,
+                    "last_edited_time": 1706249487555,
+                    "parent_id": "03afd5b6-6641-4fd3-869d-b246ed4ffba9",
+                    "parent_table": "collection",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "c439eec9-ef82-4027-b289-81d5e221d970": {
+                "value": {
+                    "id": "c439eec9-ef82-4027-b289-81d5e221d970",
+                    "version": 98,
+                    "type": "collection_view_page",
+                    "view_ids": [
+                        "fb5085bc-6092-4089-a4f8-bbe698064172"
+                    ],
+                    "collection_id": "03afd5b6-6641-4fd3-869d-b246ed4ffba9",
+                    "format": {
+                        "collection_pointer": {
+                            "id": "03afd5b6-6641-4fd3-869d-b246ed4ffba9",
+                            "table": "collection",
+                            "spaceId": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                        },
+                        "page_cover_position": 0.6
+                    },
+                    "permissions": [
+                        {
+                            "role": "editor",
+                            "type": "user_permission",
+                            "user_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f"
+                        },
+                        {
+                            "role": "reader",
+                            "type": "public_permission",
+                            "added_timestamp": 1706200744949,
+                            "allow_duplicate": false
+                        }
+                    ],
+                    "created_time": 1706200490822,
+                    "last_edited_time": 1706211764230,
+                    "parent_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c",
+                    "parent_table": "space",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "cd0f5845-1508-4ff4-bbb9-aa64d0cf5d51": {
+                "value": {
+                    "id": "cd0f5845-1508-4ff4-bbb9-aa64d0cf5d51",
+                    "version": 28,
+                    "type": "table_of_contents",
+                    "format": {
+                        "block_color": "gray"
+                    },
+                    "created_time": 1706244841428,
+                    "last_edited_time": 1706249487555,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "26f57af2-2ec4-4cb4-a7fc-18f2ddcacdc1": {
+                "value": {
+                    "id": "26f57af2-2ec4-4cb4-a7fc-18f2ddcacdc1",
+                    "version": 38,
+                    "type": "header",
+                    "properties": {
+                        "title": [
+                            [
+                                "題目"
+                            ]
+                        ]
+                    },
+                    "created_time": 1706202759705,
+                    "last_edited_time": 1706245937131,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "350a743b-d6be-4824-8a1c-be4ec9a53489": {
+                "value": {
+                    "id": "350a743b-d6be-4824-8a1c-be4ec9a53489",
+                    "version": 25,
+                    "type": "sub_header",
+                    "properties": {
+                        "title": [
+                            [
+                                "H2"
+                            ]
+                        ]
+                    },
+                    "created_time": 1706246246755,
+                    "last_edited_time": 1706246255059,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "911295a7-c5c9-4783-ab6a-e4173c6b41d5": {
+                "value": {
+                    "id": "911295a7-c5c9-4783-ab6a-e4173c6b41d5",
+                    "version": 23,
+                    "type": "bookmark",
+                    "properties": {
+                        "link": [
+                            [
+                                "https://zerojudge.tw/ShowProblem?problemid=a001"
+                            ]
+                        ],
+                        "title": [
+                            [
+                                "a001. 哈囉 - 高中生程式解題系統"
+                            ]
+                        ],
+                        "description": [
+                            [
+                                "學習所有程式語言的第一個練習題 請寫一個程式，可以讀入指定的字串，並且輸出指定的字串。"
+                            ]
+                        ]
+                    },
+                    "format": {
+                        "bookmark_icon": "https://zerojudge.tw/favicon.ico"
+                    },
+                    "created_time": 1706202885814,
+                    "last_edited_time": 1706245425165,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "5f8a3b88-cb9d-4bcb-a1a3-6eb23aed16a3": {
+                "value": {
+                    "id": "5f8a3b88-cb9d-4bcb-a1a3-6eb23aed16a3",
+                    "version": 19,
+                    "type": "header",
+                    "properties": {
+                        "title": [
+                            [
+                                "解答",
+                                [
+                                    [
+                                        "b"
+                                    ],
+                                    [
+                                        "b"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    },
+                    "created_time": 1706202814773,
+                    "last_edited_time": 1706245940931,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "f7a06446-f44d-4a54-b4a9-9eb722996115": {
+                "value": {
+                    "id": "f7a06446-f44d-4a54-b4a9-9eb722996115",
+                    "version": 29,
+                    "type": "sub_header",
+                    "properties": {
+                        "title": [
+                            [
+                                "H2"
+                            ]
+                        ]
+                    },
+                    "created_time": 1706246258425,
+                    "last_edited_time": 1706246264090,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "475252e3-9c80-4e72-8c3f-0b79669dcf32": {
+                "value": {
+                    "id": "475252e3-9c80-4e72-8c3f-0b79669dcf32",
+                    "version": 27,
+                    "type": "code",
+                    "properties": {
+                        "title": [
+                            [
+                                "print('hello,',input())"
+                            ]
+                        ],
+                        "language": [
+                            [
+                                "Python"
+                            ]
+                        ]
+                    },
+                    "created_time": 1706202742939,
+                    "last_edited_time": 1706245425165,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "c9e076bd-f305-4011-8065-c5db2fb54f5e": {
+                "value": {
+                    "id": "c9e076bd-f305-4011-8065-c5db2fb54f5e",
+                    "version": 62,
+                    "type": "header",
+                    "properties": {
+                        "title": [
+                            [
+                                "標題3"
+                            ]
+                        ]
+                    },
+                    "created_time": 1706246189039,
+                    "last_edited_time": 1706247660488,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "6e72cfe3-f448-464f-bbac-314c32c72f86": {
+                "value": {
+                    "id": "6e72cfe3-f448-464f-bbac-314c32c72f86",
+                    "version": 36,
+                    "type": "header",
+                    "properties": {
+                        "title": [
+                            [
+                                "標題4"
+                            ]
+                        ]
+                    },
+                    "created_time": 1706247671015,
+                    "last_edited_time": 1706247675885,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "cdbaed99-b75a-48f9-8d19-abe0359289f5": {
+                "value": {
+                    "id": "cdbaed99-b75a-48f9-8d19-abe0359289f5",
+                    "version": 6,
+                    "type": "header",
+                    "properties": {
+                        "title": [
+                            [
+                                "標題5"
+                            ]
+                        ]
+                    },
+                    "format": {
+                        "copied_from_pointer": {
+                            "id": "6e72cfe3-f448-464f-bbac-314c32c72f86",
+                            "table": "block",
+                            "spaceId": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                        }
+                    },
+                    "created_time": 1706247676167,
+                    "last_edited_time": 1706247679968,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "copied_from": "6e72cfe3-f448-464f-bbac-314c32c72f86",
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            },
+            "826f6586-8d75-4921-82e8-25f72b9605b5": {
+                "value": {
+                    "id": "826f6586-8d75-4921-82e8-25f72b9605b5",
+                    "version": 3,
+                    "type": "text",
+                    "created_time": 1706247680448,
+                    "last_edited_time": 1706247680448,
+                    "parent_id": "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                    "parent_table": "block",
+                    "alive": true,
+                    "created_by_table": "notion_user",
+                    "created_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "last_edited_by_table": "notion_user",
+                    "last_edited_by_id": "69c6b855-451c-488e-bf47-9d45bbb03d1f",
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            }
+        },
+        "collection": {
+            "03afd5b6-6641-4fd3-869d-b246ed4ffba9": {
+                "value": {
+                    "id": "03afd5b6-6641-4fd3-869d-b246ed4ffba9",
+                    "version": 61,
+                    "name": [
+                        [
+                            "blog"
+                        ]
+                    ],
+                    "schema": {
+                        "IB`r": {
+                            "name": "狀態",
+                            "type": "select",
+                            "options": [
+                                {
+                                    "id": "f3ed7817-7837-4337-807f-145577abdc13",
+                                    "color": "orange",
+                                    "value": "發布"
+                                },
+                                {
+                                    "id": "0f1108f0-c62c-47b7-997e-a6aed394e11a",
+                                    "color": "green",
+                                    "value": "草稿"
+                                }
+                            ]
+                        },
+                        "L<bs": {
+                            "name": "分類",
+                            "type": "select",
+                            "options": [
+                                {
+                                    "id": "b9a6bcb2-d1e8-465d-98ac-b6ea36a1f85e",
+                                    "color": "green",
+                                    "value": "生活"
+                                },
+                                {
+                                    "id": "3112f216-b0f4-4ff9-943f-acf82a575d4e",
+                                    "color": "pink",
+                                    "value": "解題"
+                                }
+                            ]
+                        },
+                        "Zt~c": {
+                            "name": "標籤",
+                            "type": "multi_select",
+                            "options": [
+                                {
+                                    "id": "ea9ebcee-4497-404f-9e80-f1475163541c",
+                                    "color": "purple",
+                                    "value": "ZeroJudge"
+                                },
+                                {
+                                    "id": "c455371f-0378-4888-b80e-a4b9460d370b",
+                                    "color": "pink",
+                                    "value": "Python"
+                                }
+                            ]
+                        },
+                        "\\JFL": {
+                            "name": "概述",
+                            "type": "text"
+                        },
+                        "^VBO": {
+                            "name": "發布時間",
+                            "type": "date"
+                        },
+                        "title": {
+                            "name": "標題",
+                            "type": "title"
+                        }
+                    },
+                    "icon": "📔",
+                    "cover": "/images/page-cover/gradients_11.jpg",
+                    "format": {
+                        "collection_cover_position": 0.9,
+                        "collection_page_properties": [
+                            {
+                                "visible": true,
+                                "property": "Zt~c"
+                            }
+                        ]
+                    },
+                    "parent_id": "c439eec9-ef82-4027-b289-81d5e221d970",
+                    "parent_table": "block",
+                    "alive": true,
+                    "migrated": true,
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            }
+        },
+        "space": {},
+        "collection_view": {
+            "fb5085bc-6092-4089-a4f8-bbe698064172": {
+                "value": {
+                    "id": "fb5085bc-6092-4089-a4f8-bbe698064172",
+                    "version": 8,
+                    "type": "table",
+                    "name": "文章",
+                    "format": {
+                        "table_wrap": true,
+                        "table_properties": [
+                            {
+                                "width": 276,
+                                "visible": true,
+                                "property": "title"
+                            },
+                            {
+                                "width": 200,
+                                "visible": true,
+                                "property": "\\JFL"
+                            },
+                            {
+                                "width": 200,
+                                "visible": true,
+                                "property": "L<bs"
+                            },
+                            {
+                                "width": 200,
+                                "visible": true,
+                                "property": "Zt~c"
+                            },
+                            {
+                                "visible": true,
+                                "property": "IB`r"
+                            },
+                            {
+                                "visible": true,
+                                "property": "^VBO"
+                            }
+                        ],
+                        "collection_pointer": {
+                            "id": "03afd5b6-6641-4fd3-869d-b246ed4ffba9",
+                            "table": "collection",
+                            "spaceId": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                        },
+                        "table_frozen_column_index": -1
+                    },
+                    "parent_id": "c439eec9-ef82-4027-b289-81d5e221d970",
+                    "parent_table": "block",
+                    "alive": true,
+                    "page_sort": [
+                        "c79f71da-c9ca-4e7f-b734-e35ba3b4a65c",
+                        "2d3d912f-cf84-4de5-b3a5-b28bb4f3ad3a",
+                        "10cb2de4-9edd-4523-b314-44281729d029"
+                    ],
+                    "space_id": "326bce6a-5d25-49ac-81f5-110ed78f6c5c"
+                },
+                "role": "reader"
+            }
+        },
+        "notion_user": {},
+        "collection_query": {},
+        "signed_urls": {}
+    }
+}
