@@ -233,7 +233,7 @@ const getAllPost = async (type: string, page?: number) => {
         // console.log({ publishTimeUTC })
         // 獲取圖片網址
         const cover = getCover(item)
-
+        console.log("獲取", item, "文章的資訊成功")
         return {
           id: item,
           cover,
