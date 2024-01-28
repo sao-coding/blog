@@ -14,11 +14,10 @@ services:
       - 3000:3000
     networks:
       - my_network
+#   # Add more containers below (nginx, postgres, etc.)
 
-  # Add more containers below (nginx, postgres, etc.)
-
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-networks:
-  my_network:
-    external: true
+# # Define a network, which allows containers to communicate
+# # with each other, by using their container name as a hostname
+# networks:
+#   my_network:
+#     external: true
