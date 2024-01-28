@@ -17,9 +17,13 @@ RUN \
   fi
 
 COPY src ./src
+RUN echo "已複製 src"
 COPY public ./public
+RUN echo "已複製 public"
 COPY next.config.js .
+RUN echo "已複製 next.config.js"
 COPY tsconfig.json .
+RUN echo "已複製 tsconfig.json"
 
 # Environment variables must be present at build time
 # https://github.com/vercel/next.js/discussions/14030
