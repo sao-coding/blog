@@ -27,18 +27,18 @@ type: docker
 # CMD ["pnpm", "start"]
 
 steps:
-  - name: restore cache
+  - name: 恢復緩存
     image: drillster/drone-volume-cache
     pull: if-not-exists
     volumes:
       - name: cache
         path: /cache # fixed, can't be change
     settings:
-      restore: true
-      mount: # list of folders or files to cache
-        - ./.pnpm-store
+    restore: true
+    mount: # list of folders or files to cache
+      - ./.pnpm-store
 
-  - name: build
+  - name: 安裝依賴&佈署
   image: node:20-alpine
   commands:
     - corepack enable  # no pnpm installation required
@@ -47,16 +47,16 @@ steps:
     - pnpm build
     - pnpm start
 
-  - name: save cache
+  - name: 緩存依賴
   image: drillster/drone-volume-cache
   pull: if-not-exists
   volumes:
     - name: cache
       path: /cache # fixed, can't be change
   settings:
-    rebuild: true
-    mount: # list of folders or files to cache
-      - ./.pnpm-store
+  rebuild: true
+  mount: # list of folders or files to cache
+    - ./.pnpm-store
 
 
 # mount host volumes https://docs.drone.io/pipeline/docker/syntax/volumes/host/
