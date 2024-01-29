@@ -4,7 +4,7 @@ type: docker
 
 steps:
   - name: build-and-deploy
-    image: docker:latest
+    image: docker:23.0.1-cli
     environment:
       # ENV_VARIABLE: ${ENV_VARIABLE}
       # NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
