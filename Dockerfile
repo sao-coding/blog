@@ -7,8 +7,9 @@ RUN corepack enable
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
+# Copy package.json and pnmp-lock.yaml
+COPY package.json .
+COPY pnpm-lock.yaml .
 
 # Install dependencies
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm i --frozen-lockfile
