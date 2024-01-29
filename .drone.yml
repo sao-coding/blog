@@ -37,7 +37,6 @@ steps:
       restore: true
       mount: # list of folders or files to cache
         - ./.pnpm-store
-
   - name: 安裝依賴&佈署
   image: node:20-alpine
   commands:
@@ -46,7 +45,6 @@ steps:
     - pnpm i
     - pnpm build
     - pnpm start
-
   - name: 緩存依賴
   image: drillster/drone-volume-cache
   pull: if-not-exists
