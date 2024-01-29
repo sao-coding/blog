@@ -27,7 +27,7 @@ type: docker
 # CMD ["pnpm", "start"]
 
 steps:
-  - name: 恢復緩存
+  - name: restore cache
     image: drillster/drone-volume-cache
     pull: if-not-exists
     volumes:
@@ -38,7 +38,7 @@ steps:
       mount: # list of folders or files to cache
         - ./.pnpm-store
 
-  - name: 安裝依賴-佈署
+  - name: build
   image: node:20-alpine
   commands:
     - corepack enable  # no pnpm installation required
@@ -47,7 +47,7 @@ steps:
     - pnpm build
     - pnpm start
 
-  - name: 緩存依賴
+  - name: save cache
   image: drillster/drone-volume-cache
   pull: if-not-exists
   volumes:
