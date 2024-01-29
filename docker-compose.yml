@@ -13,7 +13,7 @@ services:
     ports:
       - 3000:3000
     networks:
-      - my_network
+      - bridge
 #   # Add more containers below (nginx, postgres, etc.)
 
 # # Define a network, which allows containers to communicate
