@@ -10,7 +10,8 @@ steps:
       # NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     commands:
       # - docker build -t next-app --build-arg ENV_VARIABLE=${ENV_VARIABLE} --build-arg NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE} ./next-app
-      #  BuildKit
+      # - docker build -t next-app .
+      #  BuildKit Enabled
       - DOCKER_BUILDKIT=1 docker build -t next-app .
       # - docker run -d -p 3000:3000 --restart=always --name=next-app next-app
       # 若是要 docker 已經有 next-app 的 container，先停止並移除
