@@ -4,7 +4,7 @@ type: docker
 
 steps:
   - name: build-and-deploy
-    image: docker:17.12.0-ce
+    image: docker:latest
     environment:
       # ENV_VARIABLE: ${ENV_VARIABLE}
       # NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
