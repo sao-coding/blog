@@ -1,4 +1,8 @@
-FROM node:20-alpine
+FROM node:20-slim
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+RUN corepack enable
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -7,8 +11,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm i -g pnpm
-RUN pnpm i
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm i --frozen-lockfile
 
 # Copy the app source code to the container
 COPY . .

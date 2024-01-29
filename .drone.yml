@@ -2,67 +2,24 @@ kind: pipeline
 name: default
 type: docker
 
-# FROM node:20-alpine
-
-# # Set the working directory inside the container
-# WORKDIR /app
-
-# # Copy package.json and package-lock.json to the container
-# COPY package*.json ./
-
-# # Install dependencies
-# RUN npm i -g pnpm
-# RUN pnpm i
-
-# # Copy the app source code to the container
-# COPY . .
-
-# # Build the Next.js app
-# RUN pnpm build
-
-# # Expose the port the app will run on
-# EXPOSE 3000
-
-# # Start the app
-# CMD ["pnpm", "start"]
-
 steps:
-  - name: 恢復緩存
-    image: drillster/drone-volume-cache
-    pull: if-not-exists
-    volumes:
-      - name: cache
-        path: /cache # fixed, can't be change
-    settings:
-      restore: true
-      mount: # list of folders or files to cache
-        - ./.pnpm-store
-
-  - name: 安裝依賴&佈署
-    image: node:20-alpine
+  - name: build-and-deploy
+    image: docker:17.12.0-ce
+    environment:
+      # ENV_VARIABLE: ${ENV_VARIABLE}
+      # NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     commands:
-      - corepack enable # no pnpm installation required
-      - pnpm config set store-dir .pnpm-store
-      - pnpm i
-      - pnpm build
-      - pnpm start
-
-  - name: 緩存依賴
-    image: drillster/drone-volume-cache
-    pull: if-not-exists
+      # - docker build -t next-app --build-arg ENV_VARIABLE=${ENV_VARIABLE} --build-arg NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE} ./next-app
+      - docker build -t next-app .
+      # - docker run -d -p 3000:3000 --restart=always --name=next-app next-app
+      # 若是要 docker 已經有 next-app 的 container，先停止並移除
+      - docker rm -f next-app || true
+      - docker run -d -p 3000:3000 --name=next-app next-app
     volumes:
-      - name: cache
-        path: /cache # fixed, can't be change
-    settings:
-      rebuild: true
-      mount: # list of folders or files to cache
-        - ./.pnpm-store
+      - name: docker_sock
+        path: /var/run/docker.sock
 
-# mount host volumes https://docs.drone.io/pipeline/docker/syntax/volumes/host/
 volumes:
-  - name: cache
-    host:
-      path: /tmp/pnpm_cache
   - name: docker_sock
     host:
       path: /var/run/docker.sock
