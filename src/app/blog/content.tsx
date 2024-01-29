@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 
 import { PostCard as PostCardType } from "@/types"
 import { useQuery } from "@tanstack/react-query"
@@ -10,13 +10,13 @@ import PostCard from "./post-card"
 
 const Content = () => {
   const router = useRouter()
-  //   const searchParams = useSearchParams()
-  //   const currentPage = searchParams.get("page") || 1
+  const searchParams = useSearchParams()
+  const currentPage = searchParams.get("page") || 1
 
   const { isLoading, data: post } = useQuery<PostCardType[]>({
-    queryKey: ["post"],
+    queryKey: ["post", currentPage],
     queryFn: async () => {
-      const res = await fetch(`/api/post?type=all`)
+      const res = await fetch(`/api/post?type=all&page=${currentPage}`)
       const data = await res.json()
       return data
     }

@@ -1,5 +1,7 @@
 "use client"
 
+import { Suspense } from "react"
+
 import { IconChevronDown } from "@tabler/icons-react"
 
 import Aside from "./aside"
@@ -22,7 +24,9 @@ const BlogPage = () => {
         />
       </div>
       <div className='flex w-full flex-col gap-4 py-5 md:flex-row md:py-20'>
-        <Content />
+        <Suspense>
+          <Content />
+        </Suspense>
         <Aside />
       </div>
     </>
