@@ -34,36 +34,34 @@ steps:
       - name: cache
         path: /cache # fixed, can't be change
     settings:
-    restore: true
-    mount: # list of folders or files to cache
-      - ./.pnpm-store
+      restore: true
+      mount: # list of folders or files to cache
+        - ./.pnpm-store
+#   - name: 安裝依賴&佈署
+#   image: node:20-alpine
+#   commands:
+#     - corepack enable  # no pnpm installation required
+#     - pnpm config set store-dir .pnpm-store
+#     - pnpm i
+#     - pnpm build
+#     - pnpm start
 
-  - name: 安裝依賴&佈署
-  image: node:20-alpine
-  commands:
-    - corepack enable  # no pnpm installation required
-    - pnpm config set store-dir .pnpm-store
-    - pnpm i
-    - pnpm build
-    - pnpm start
+#   - name: 緩存依賴
+#   image: drillster/drone-volume-cache
+#   pull: if-not-exists
+#   volumes:
+#     - name: cache
+#       path: /cache # fixed, can't be change
+#   settings:
+#     rebuild: true
+#     mount: # list of folders or files to cache
+#       - ./.pnpm-store
 
-  - name: 緩存依賴
-  image: drillster/drone-volume-cache
-  pull: if-not-exists
-  volumes:
-    - name: cache
-      path: /cache # fixed, can't be change
-  settings:
-  rebuild: true
-  mount: # list of folders or files to cache
-    - ./.pnpm-store
-
-
-# mount host volumes https://docs.drone.io/pipeline/docker/syntax/volumes/host/
-volumes:
-  - name: cache
-    host:
-      path: /tmp/pnpm_cache
-  - name: docker_sock
-    host:
-      path: /var/run/docker.sock
+# # mount host volumes https://docs.drone.io/pipeline/docker/syntax/volumes/host/
+# volumes:
+#   - name: cache
+#     host:
+#       path: /tmp/pnpm_cache
+#   - name: docker_sock
+#     host:
+#       path: /var/run/docker.sock
