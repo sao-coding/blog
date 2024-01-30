@@ -31,6 +31,12 @@ body {
     text-wrap: balance;
   }
 } */
+
+/* @font-face {
+  font-family: Break;
+  src: url("/font/Break Bold.ttf");
+} */
+
 @layer base {
   * {
     -webkit-tap-highlight-color: transparent;

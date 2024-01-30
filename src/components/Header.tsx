@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-// import Logo from "@/components/logo"
+import Logo from "@/components/Logo"
 import { NAV_LINKS } from "@/config/menu"
 
 const Header = async () => {
@@ -8,8 +8,8 @@ const Header = async () => {
     <header className='blur-background fixed inset-x-0 top-3 z-10 mx-auto hidden h-14 max-w-6xl items-center justify-between rounded-2xl px-4 py-2 shadow-sm saturate-100 backdrop-blur-md transition-colors duration-500 md:flex'>
       <div className='flex items-center'>
         <Link href='/' className='font-bold'>
-          {/* <Logo className='h-8 w-40 fill-black dark:fill-white' /> */}
-          唯一のBlog
+          <Logo className='h-14 fill-black stroke-[20] dark:fill-white dark:stroke-white' />
+          {/* 唯一のBlog */}
         </Link>
       </div>
       <div className='flex items-center'>

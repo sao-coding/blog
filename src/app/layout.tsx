@@ -1,15 +1,13 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import Script from "next/script"
 
-import Container from "@/components/Container"
 import Header from "@/components/Header"
 
 import Providers from "./providers"
 
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+// const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='zh-Hant-TW' className='scroll-smooth'>
-      <body className={inter.className}>
+      <body>
         <Providers>
           <div className="fixed z-[-999] h-full w-full bg-[url('/img/index.webp')] bg-cover bg-center bg-no-repeat before:absolute before:inset-0 before:bg-black/50" />
           <Header />
-          <Container>{children}</Container>
+          {children}
           <canvas
             id='universe'
             className='pointer-events-none fixed left-0 top-0 z-[1] m-0 block h-full w-full border-0 p-0 outline-0'
