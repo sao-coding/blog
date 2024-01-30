@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { AggregationResult, CollectionViewType, ID, RecordMap } from "notion-types"
 
 import { PostCard } from "@/types"
-import getAllPost from "@/utils/getAllPost"
+import getAllPost from "@/utils/get-all-post"
 
 type CollectionInstance = {
   recordMap: RecordMap

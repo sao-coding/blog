@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { NotionAPI } from "notion-client"
-import { SelectOption } from "notion-types"
 
+import { PostCard, SelectOptionList } from "@/types"
 import getAllPost from "@/utils/get-all-post"
 
 export const GET = async (req: NextRequest) => {
@@ -12,7 +12,7 @@ export const GET = async (req: NextRequest) => {
     "fb5085bc-6092-4089-a4f8-bbe698064172",
     "文章"
   )
-  //   尋找所有標籤
+  //   尋找所有分類
   //   "collection": {
   //     "03afd5b6-6641-4fd3-869d-b246ed4ffba9": {
   //         "value": {
@@ -24,38 +24,48 @@ export const GET = async (req: NextRequest) => {
   //                 ]
   //             ],
   //             "schema": {
+
+  //   SelectOptionList 等於 SelectOption + total
+
   const collection = collectionData.recordMap.collection
-  const tagsList: SelectOption[] = []
-  let tagsTotal = 0
+  const categoriesList: SelectOptionList[] = []
+  let categoriesTotal = 0
   if (collection) {
     const tags = Object.entries(collection)[0][1].value.schema
-    // 尋找 name 為 標籤 的欄位 查看標籤數量
+    // 尋找 name 為 分類 的欄位 查看分類數量
 
     Object.entries(tags).forEach(([key, value]) => {
-      if (value.name === "標籤") {
+      if (value.name === "分類") {
         if (value.options) {
           value.options.forEach((option) => {
-            tagsList.push({
+            categoriesList.push({
               id: option.id,
               color: option.color,
               value: option.value
             })
           })
-          tagsTotal = value.options.length
+          categoriesTotal = value.options.length
         }
       }
     })
   }
 
   if (type === "list") {
-    const AllPosts = getAllPost("all")
+    const AllPosts = (await getAllPost("all")) as PostCard[]
+    // 每個分類的文章數量
 
-    return NextResponse.json(tagsList)
+    categoriesList.forEach((category) => {
+      category.total = AllPosts.filter((post) => {
+        return post.category === category.value
+      }).length
+    })
+
+    return NextResponse.json(categoriesList)
   }
 
   if (type === "total") {
-    return NextResponse.json({ total: tagsTotal })
+    return NextResponse.json({ total: categoriesTotal })
   }
 
-  return NextResponse.json({ list: tagsList, total: tagsTotal })
+  return NextResponse.json({ list: categoriesList, total: categoriesTotal })
 }

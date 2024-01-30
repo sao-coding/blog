@@ -10,7 +10,7 @@ import { NotionRenderer } from "react-notion-x"
 import useScrollspy from "@/hooks/use-scrollspy"
 import { cx } from "@/lib/utils"
 import { Post } from "@/types"
-import { IconAlignRight, IconList } from "@tabler/icons-react"
+import { IconAlignRight, IconCalendarMonth, IconCategory, IconList } from "@tabler/icons-react"
 import { useQuery } from "@tanstack/react-query"
 
 import "react-notion-x/src/styles.css"
@@ -134,13 +134,37 @@ const Post = ({ params }: { params: { id: string } }) => {
         <div>Loading...</div>
       ) : (
         <>
-          <div className='flex w-full flex-col gap-4 p-2 md:flex-row md:p-0'>
-            {post && (
-              <>
+          {post && (
+            <>
+              <div
+                className={cx(
+                  "relative mb-8 flex h-80 items-center justify-center before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-3xl before:bg-black/25 md:h-96",
+                  post.properties.cover && "rounded-3xl bg-cover bg-center bg-no-repeat"
+                )}
+                style={{
+                  backgroundImage: `url(${post.properties.cover})`
+                }}
+              >
+                <div className='absolute flex flex-col gap-2 px-6'>
+                  <h1 className='text-3xl font-semibold md:text-4xl'>{post.title}</h1>
+                  {/* properties: {JSON.stringify(post?.properties)} */}
+                  <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-1'>
+                      <IconCalendarMonth />
+                      {new Date(post.properties.publishTime).toLocaleDateString()}
+                    </div>
+                    <div className='flex items-center gap-1'>
+                      <IconCategory />
+                      {post.properties.category}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='flex w-full flex-col gap-4 p-2 md:flex-row md:p-0'>
                 <NotionRenderer
-                  className='w-full rounded-xl border !bg-black/25 p-4 md:w-3/4'
+                  className='w-full rounded-3xl border !bg-black/25 !p-4 md:w-3/4'
                   recordMap={post.content}
-                  fullPage={true}
+                  // fullPage={true}
                   darkMode={true}
                   // showTableOfContents={true}
                   // minTableOfContentsItems={3}
@@ -155,7 +179,7 @@ const Post = ({ params }: { params: { id: string } }) => {
                   // }
                   components={{
                     Code,
-                    Collection,
+                    // Collection,
                     Equation,
                     Modal
                     // Pdf
@@ -167,7 +191,7 @@ const Post = ({ params }: { params: { id: string } }) => {
                     // <div className='fixed left-0 top-20 hidden flex-col gap-1 rounded-xl bg-black/25 p-2 md:sticky md:flex'>
                     <div
                       className={cx(
-                        "fixed bottom-4 left-4 hidden flex-col gap-1 rounded-xl border bg-black/25 p-2 backdrop-blur-md md:sticky md:left-0 md:top-20 md:flex md:backdrop-blur-0",
+                        "fixed bottom-4 left-4 hidden flex-col gap-1 rounded-3xl border bg-black/25 p-3 backdrop-blur-md md:sticky md:left-0 md:top-20 md:flex md:backdrop-blur-0",
                         tocActive ? "flex" : "hidden"
                       )}
                     >
@@ -207,15 +231,15 @@ const Post = ({ params }: { params: { id: string } }) => {
                     </div>
                   )}
                 </div>
-              </>
-            )}
-          </div>
-          <div
-            className='fixed bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-black md:hidden'
-            onClick={() => setTocActive(!tocActive)}
-          >
-            <IconList />
-          </div>
+              </div>
+              <div
+                className='fixed bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-black md:hidden'
+                onClick={() => setTocActive(!tocActive)}
+              >
+                <IconList />
+              </div>
+            </>
+          )}
         </>
       )}
     </>

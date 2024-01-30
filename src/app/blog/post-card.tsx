@@ -2,15 +2,15 @@ import Link from "next/link"
 
 import { cx } from "@/lib/utils"
 import { PostCard } from "@/types"
-import { IconCalendarMonth, IconInbox, IconTag } from "@tabler/icons-react"
+import { IconCalendarMonth, IconCategory, IconTag } from "@tabler/icons-react"
 
 const PostCard = ({ post, index }: { post: PostCard; index: number }) => {
   return (
     // 若沒有 Cover 圖片，則顯示預設圖片
-    <div className='relative flex w-full flex-col items-center overflow-hidden rounded-xl border bg-black/25 md:h-56 md:flex-row'>
+    <div className='relative flex w-full flex-col items-center overflow-hidden rounded-3xl border bg-black/25 md:h-56 md:flex-row'>
       <div
         className={cx(
-          "relative h-60 w-full overflow-hidden rounded-xl md:h-full md:w-5/12",
+          "relative h-60 w-full overflow-hidden rounded-3xl md:h-full md:w-5/12",
           index % 2 !== 0 && "md:order-1"
         )}
       >
@@ -31,12 +31,12 @@ const PostCard = ({ post, index }: { post: PostCard; index: number }) => {
             index % 2 !== 0 && "left-auto right-4"
           )}
         >
-          <IconInbox size={20} />
+          <IconCategory size={20} />
           {post.category}
         </div>
       </div>
-      <div className='mb-12 flex w-full flex-col gap-2 p-5 md:w-7/12 md:px-10'>
-        <Link href={`/post/${post.id}`} className='hover:text-orange-600'>
+      <div className='mb-8 flex w-full flex-col gap-2 p-5 md:w-7/12 md:px-10'>
+        <Link href={`/post/${post.id}`} className='line-clamp-2 hover:text-orange-600'>
           <h1 className='text-2xl'>{post.title}</h1>
         </Link>
         <div className='flex items-center gap-1'>
@@ -44,7 +44,7 @@ const PostCard = ({ post, index }: { post: PostCard; index: number }) => {
           {new Date(post.publishTime).toLocaleString()}
         </div>
 
-        <p>{post.summary}</p>
+        <p className='line-clamp-2'>{post.summary}</p>
 
         <div
           className={cx(

@@ -31,7 +31,7 @@
 //     }
 // ]
 
-import { ExtendedRecordMap } from "notion-types"
+import { ExtendedRecordMap, SelectOption } from "notion-types"
 import { TableOfContentsEntry } from "notion-utils"
 
 export type PostCard = {
@@ -45,8 +45,23 @@ export type PostCard = {
   publishTime: string
 }
 
+export type Properties = {
+  cover: string
+  summary: string
+  category: string
+  tags: string[]
+  status: string
+  publishTime: string
+}
+
 export type Post = {
   toc: TableOfContentsEntry[]
+  title: string
+  properties: Properties
   content: ExtendedRecordMap
 }
 // export type AllPosts = Post[]
+
+export type SelectOptionList = SelectOption & {
+  total?: number
+}

@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
 import { AggregationResult, CollectionViewType, ID, RecordMap } from "notion-types"
 
-import getAllPost from "@/utils/getAllPost"
-import getPost from "@/utils/getPost"
+import getAllPost from "@/utils/get-all-post"
+import getPost from "@/utils/get-post"
 
 // "result": {
 //     "type": "reducer",
@@ -46,6 +46,8 @@ export const GET = async (req: NextRequest) => {
   const type = req.nextUrl.searchParams.get("type")
   const id = req.nextUrl.searchParams.get("id")
   const page = req.nextUrl.searchParams.get("page") || 1
+  const category = req.nextUrl.searchParams.get("category") || ""
+  const tag = req.nextUrl.searchParams.get("tag") || ""
 
   //   export interface CollectionInstance {
   //     recordMap: RecordMap;
@@ -54,11 +56,11 @@ export const GET = async (req: NextRequest) => {
 
   // 03afd5b6-6641-4fd3-869d-b246ed4ffba9?v=fb5085bc-6092-4089-a4f8-bbe698064172
   if (type === "all") {
-    return NextResponse.json(await getAllPost(type, Number(page)))
+    return NextResponse.json(await getAllPost(type, Number(page), category, tag))
   }
 
-  if (type === "count") {
-    return NextResponse.json({ count: await getAllPost(type) })
+  if (type === "total") {
+    return NextResponse.json({ total: await getAllPost(type) })
   }
 
   if (type === "one" && id) {

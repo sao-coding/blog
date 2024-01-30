@@ -18,12 +18,14 @@ import { create } from "zustand"
 //     setDeleteMessage: (message) => set({ deleteMessage: message }),
 // }))
 
-type PageIdStore = {
-  pageId: string
-  setPageId: (pageId: string) => void
+// 判斷頁面選染完畢
+
+type PageLoadStore = {
+  pageLoad: boolean
+  setPageLoad: (status: boolean) => void
 }
 
-export const usePageIdStore = create<PageIdStore>((set) => ({
-  pageId: "",
-  setPageId: (pageId) => set({ pageId })
+export const usePageLoadStore = create<PageLoadStore>((set) => ({
+  pageLoad: false,
+  setPageLoad: (status) => set({ pageLoad: status })
 }))

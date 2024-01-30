@@ -8,11 +8,10 @@ import Aside from "./aside"
 import Content from "./content"
 
 const BlogPage = () => {
+  // 滾動到特定元素
   const handleDown = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth"
-    })
+    const element = document.querySelector("#layout")
+    element?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
@@ -23,7 +22,7 @@ const BlogPage = () => {
           onClick={handleDown}
         />
       </div>
-      <div className='flex w-full flex-col gap-4 py-5 md:flex-row md:py-20'>
+      <div id='layout' className='flex w-full flex-col gap-4 py-5 md:flex-row md:py-20'>
         <Suspense>
           <Content />
         </Suspense>

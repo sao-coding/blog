@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import React from "react"
 import { usePathname } from "next/navigation"
 
+import { usePageLoadStore } from "@/store/page-load"
 // import { Session } from "next-auth"
 // import { ThemeProvider } from "next-themes"
 // import getIP from "@/utils/ip"
@@ -15,8 +16,33 @@ const Providers = ({
   children: React.ReactNode
   // session: Session | null
 }) => {
-  const [queryClient] = useState(() => new QueryClient())
+  const [queryClient] = React.useState(() => new QueryClient())
   const pathname = usePathname()
+  const { pageLoad, setPageLoad } = usePageLoadStore()
+
+  // 獲取 localStorage scroll 位置 並設定
+
+  React.useEffect(() => {
+    const scroll = localStorage.getItem("scroll")
+    // console.log("獲取 scroll", scroll)
+    if (scroll && pageLoad) {
+      // console.log("設定 scroll", scroll)
+      window.scrollTo(0, parseInt(scroll))
+    }
+  }, [pageLoad])
+
+  // 獲取 scroll 位置 並存入 localStorage
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      // 判斷 頁面載入完成
+      if (!pageLoad) return
+      localStorage.setItem("scroll", window.scrollY.toString())
+      // console.log("儲存 scroll", window.scrollY)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [pageLoad])
 
   // useEffect(() => {
   //   const writeLog = async () => {

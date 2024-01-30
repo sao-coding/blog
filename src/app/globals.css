@@ -74,9 +74,9 @@ body {
   scroll-margin-top: 50px;
 }
 
-.notion-page {
+/* .notion-page {
   @apply !w-full !p-0;
-}
+} */
 
 .notion-code {
   min-height: 70px;
