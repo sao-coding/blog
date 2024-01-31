@@ -1,6 +1,6 @@
 "use client"
 
-import PostCard from "@/app/blog/post-card"
+import PostCard from "@/app/(main)/blog/post-card"
 import { PostCard as PostCardType } from "@/types"
 import { useQuery } from "@tanstack/react-query"
 

@@ -1,4 +1,4 @@
-import Post from "@/app/post/[id]/post"
+import Post from "@/app/(main)/post/[id]/post"
 // import { site } from "@/config/site"
 // import { Post as PostType } from "@/types"
 // import getPost from "@/utils/post"
