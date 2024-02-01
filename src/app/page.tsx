@@ -1,12 +1,16 @@
 "use client"
 
 import React from "react"
+import Link from "next/link"
+import cx from "classix"
 import { motion, useInView } from "framer-motion"
 
+import { SOCIAL_LINKS } from "@/config/menu"
 import { IconChevronDown } from "@tabler/icons-react"
 
 type AnimatedTextProps = {
   text: string | string[]
+  delay?: number
   el?: keyof JSX.IntrinsicElements
   className?: string
 }
@@ -15,16 +19,29 @@ const defaultAnimation = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    y: 0
+    // 往上彈跳再回到原位
+    y: [10, -10, 0],
+    transition: { duration: 0.6 }
   }
 }
 
-const AnimatedText = ({ text, el: Wrapper = "div", className = "" }: AnimatedTextProps) => {
+const AnimatedText = ({ text, delay = 0.1, el: Wrapper = "div", className }: AnimatedTextProps) => {
   const ref = React.useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-400px 0px -400px 0px" })
+  const isInView = useInView(ref, { once: true })
+  const [isDone, setIsDone] = React.useState(false)
   const textArray = Array.isArray(text) ? text : [text]
 
   let textList: string[][] = []
+
+  React.useEffect(() => {
+    // 顯示計時器 用 log 顯示
+    if (delay) {
+      const timer = setTimeout(() => {
+        setIsDone(true)
+      }, delay * 1000)
+      return () => clearTimeout(timer)
+    }
+  }, [delay])
 
   if (Array.isArray(text)) {
     textList = textArray.map((text) => {
@@ -76,60 +93,35 @@ const AnimatedText = ({ text, el: Wrapper = "div", className = "" }: AnimatedTex
     console.log("splitText", splitText)
     textList = [splitText]
   }
-  let code = false
+
   return (
     <Wrapper className={className}>
       <motion.div
         ref={ref}
+        // initial='hidden'
+        // animate={isInView ? "visible" : "hidden"}
+        // transition={{ staggerChildren: 0.1 }}
+        // 改成等 delay 秒後再開始動畫
+        // initial='hidden'
+        // animate={isInView ? "visible" : "hidden"}
         initial='hidden'
-        animate={isInView ? "visible" : "hidden"}
-        transition={{ staggerChildren: 0.1 }}
+        // 計時 delay 秒後 visible
+        // animate={isInView || isDone.current ? "visible" : "hidden"}
+        animate={isDone ? "visible" : "hidden"}
+        transition={{ delay: delay, staggerChildren: 0.1 }}
         className='group relative leading-loose'
       >
         {textList.map((line, i) => (
           <span className='block [&_*]:inline-block' key={i}>
             {line.map((char, j) => {
               if (char.match(/^\s+$/)) {
-                if (code) {
-                  return (
-                    <code key={j} className='text-3xl'>
-                      &nbsp;
-                    </code>
-                  )
-                } else {
-                  return <span key={j}>&nbsp;</span>
-                }
-              } else {
-                // 如果 字元有包含 <學生 /> 其中一個字元，就套用 code 樣式
-                console.log(i, j, textList.length - 1, line.length - 1)
-                if (i === textList.length - 1 && j === line.length - 1) {
-                  console.log("最後一個字元", char)
-                  return (
-                    <React.Fragment key={j}>
-                      <motion.code variants={defaultAnimation} className='text-3xl'>
-                        {char}
-                      </motion.code>
-                      <span className='relative -bottom-2 inline-block h-8 w-[1px] bg-gray-800/80 opacity-0 transition-opacity duration-200 group-hover:animate-blink group-hover:opacity-100 dark:bg-gray-200/80'></span>
-                    </React.Fragment>
-                  )
-                }
-                if (char === "<") code = true
-                if ("<學生 />".includes(char) && code) {
-                  console.log("包含 <學生 />", char)
-
-                  return (
-                    <motion.code key={j} variants={defaultAnimation} className='text-3xl'>
-                      {char}
-                    </motion.code>
-                  )
-                }
-
-                return (
-                  <motion.span key={j} variants={defaultAnimation}>
-                    {char}
-                  </motion.span>
-                )
+                return <span key={j}>&nbsp;</span>
               }
+              return (
+                <motion.span key={j} variants={defaultAnimation} className='text-3xl'>
+                  {char}
+                </motion.span>
+              )
             })}
           </span>
         ))}
@@ -141,34 +133,48 @@ const AnimatedText = ({ text, el: Wrapper = "div", className = "" }: AnimatedTex
 const HomePage = () => {
   return (
     <div>
-      <div className='relative flex h-screen w-full items-center justify-center'></div>
-      <div className='relative flex h-screen w-full items-center justify-center'>
-        <div className='flex w-1/2 flex-col items-center justify-center'>
-          <div className=''>
-            {/* <div className='group relative leading-[4] [&_*]:inline-block'>
-              <h1 className='text-4xl font-black'>嗨，我是唯一👋。</h1>
-              <br />
-              <h1 className='text-4xl font-black'>一個正在學習的</h1>
-              <code className='text-3xl'>{"<學生 />"}</code>
-              <span className='group-hover:animate-blink relative -bottom-2 inline-block h-8 w-[1px] bg-gray-800/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 dark:bg-gray-200/80'></span>
-            </div> */}
-            <AnimatedText
-              text={["嗨，我是唯一👋。", "一個正在學習的 <學生 />"]}
-              className='text-4xl font-black'
-            />
-            {/* y = 20 -> 0 */}
+      {/* <div className='relative flex h-screen w-full items-center justify-center'></div> */}
+      <div className='relative flex h-screen w-full flex-col items-center justify-around px-4 md:flex-row md:justify-center md:px-0'>
+        <div className='flex w-full flex-col items-center justify-center md:w-1/2'>
+          <div className='flex flex-col gap-2'>
+            <div className='flex flex-wrap'>
+              <AnimatedText
+                text={["嗨，我是唯一👋。", "一個正在學習的"]}
+                className='text-4xl font-black'
+              />
+
+              <AnimatedText text={"<學生 />"} delay={1.5} el='code' className='self-end text-3xl' />
+              <span className='relative -bottom-2 inline-block h-8 w-[1px] bg-gray-800/80 opacity-0 transition-opacity duration-200 group-hover:animate-blink group-hover:opacity-100 dark:bg-gray-200/80'></span>
+            </div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.5, duration: 0.5 }}
-              className='text-2xl font-black'
+              animate={{ opacity: 1, y: [20, -10, 0] }}
+              transition={{ delay: 2 }}
+              className=''
             >
-              text
+              喜歡寫程式、看動漫😆
             </motion.div>
+            <div className='mt-10 flex items-center gap-2'>
+              {SOCIAL_LINKS.map((social, index) => (
+                <motion.div
+                  key={social.link}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: [20, -10, 0] }}
+                  transition={{ delay: 2 + index * 0.2 }}
+                >
+                  <Link href={social.link}>
+                    <social.icon
+                      className={cx("h-8 w-8 rounded-full stroke-2 p-1", social.color)}
+                      // size={}
+                    />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
         <div className='flex w-1/2 justify-center'>
-          <img className='h-72 w-72 rounded-full' src='/img/avatar.jpg' alt='' />
+          <img className='rounded-full md:h-72 md:w-72' src='/img/avatar.jpg' alt='' />
         </div>
         <IconChevronDown className='absolute bottom-0 h-12 w-full animate-bounce stroke-2' />
       </div>
