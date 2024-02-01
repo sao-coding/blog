@@ -14,7 +14,9 @@ const config: Config = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))"
       },
       animation: {
-        blink: "blink 1s step-end infinite"
+        blink: "blink 1s step-end infinite",
+        "marquee-left": "marquee-left var(--duration, 30s) linear infinite",
+        "marquee-up": "marquee-up var(--duration, 30s) linear infinite"
       },
       keyframes: {
         blink: {
@@ -24,6 +26,14 @@ const config: Config = {
           "40.1%, 99.9%": {
             opacity: "1"
           }
+        },
+        "marquee-left": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" }
+        },
+        "marquee-up": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" }
         }
       }
     }

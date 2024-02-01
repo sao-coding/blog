@@ -62,17 +62,17 @@ export const SOCIAL_LINKS: SocialLinks = [
   {
     icon: IconBrandFacebook,
     link: "https://www.facebook.com/Black.HANK.X",
-    color: "bg-blue-500"
+    color: "bg-blue-700"
   },
   {
     icon: IconBrandLine,
     link: "https://line.me/ti/p/t7Fr6CQFLi",
-    color: "bg-green-500"
+    color: "bg-green-700"
   },
   {
     icon: IconBrandInstagram,
     link: "https://www.instagram.com/_xox._.xox._.xox._.xox._.xox_",
-    color: "bg-pink-500"
+    color: "bg-pink-700"
   },
   {
     icon: IconBrandThreads,
