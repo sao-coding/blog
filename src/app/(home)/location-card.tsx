@@ -61,7 +61,7 @@ const LocationCard = () => {
 
   return (
     <>
-      <div className='relative h-72 w-full overflow-hidden rounded-3xl bg-black/25 p-4'>
+      <div className='relative h-60 w-full overflow-hidden rounded-3xl bg-black/25 p-4 md:h-72'>
         <div className='flex items-center gap-2'>
           <IconMapPinFilled />
           <h2 className='text-sm font-light'>臺灣</h2>

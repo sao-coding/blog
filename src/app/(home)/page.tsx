@@ -64,9 +64,11 @@ const HomePage = () => {
         </div>
         <IconChevronDown className='absolute bottom-0 h-12 w-full animate-bounce stroke-2' />
       </div>
-      <div className='relative mx-auto grid h-screen w-full max-w-6xl gap-4 md:grid-cols-2'>
-        <LocationCard />
-        <SkillsCard />
+      <div className='relative mx-auto h-screen w-full max-w-6xl'>
+        <div className='grid gap-4 md:grid-cols-2'>
+          <LocationCard />
+          <SkillsCard />
+        </div>
       </div>
     </div>
   )
