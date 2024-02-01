@@ -109,7 +109,7 @@ const AnimatedText = ({ text, el: Wrapper = "div", className = "" }: AnimatedTex
                       <motion.code variants={defaultAnimation} className='text-3xl'>
                         {char}
                       </motion.code>
-                      <span className='group-hover:animate-blink relative -bottom-2 inline-block h-8 w-[1px] bg-gray-800/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 dark:bg-gray-200/80'></span>
+                      <span className='relative -bottom-2 inline-block h-8 w-[1px] bg-gray-800/80 opacity-0 transition-opacity duration-200 group-hover:animate-blink group-hover:opacity-100 dark:bg-gray-200/80'></span>
                     </React.Fragment>
                   )
                 }
