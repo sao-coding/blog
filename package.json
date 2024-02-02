@@ -29,6 +29,7 @@
     "react-dom": "^18.2.0",
     "react-notion-x": "^6.16.0",
     "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7",
     "typed.js": "^2.1.0",
     "zustand": "^4.5.0"
   },

@@ -2,7 +2,7 @@
 
 import React from "react"
 import createGlobe from "cobe"
-import { useSpring } from "framer-motion"
+import { motion, useInView, useSpring } from "framer-motion"
 
 import { IconMapPinFilled } from "@tabler/icons-react"
 
@@ -10,6 +10,8 @@ const LocationCard = () => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null)
   const pointerInteracting = React.useRef<number | null>(null)
   const pointerInteractionMovement = React.useRef(0)
+  const ref = React.useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true })
   const fadeMask = "radial-gradient(circle at 50% 50%, rgb(0, 0, 0) 60%, rgb(0, 0, 0, 0) 70%)"
 
   const r = useSpring(0, {
@@ -60,8 +62,14 @@ const LocationCard = () => {
   }, [r])
 
   return (
-    <>
-      <div className='relative h-60 w-full overflow-hidden rounded-3xl bg-black/25 p-4 md:h-72'>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+      transition={{ duration: 0.5 }}
+      className='relative h-full w-full'
+    >
+      <div className='relative h-60 w-full overflow-hidden rounded-3xl bg-black/50 p-4 md:h-80'>
         <div className='flex items-center gap-2'>
           <IconMapPinFilled />
           <h2 className='text-sm font-light'>臺灣</h2>
@@ -117,7 +125,7 @@ const LocationCard = () => {
           />
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }
 

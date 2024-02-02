@@ -24,9 +24,9 @@ const Providers = ({
 
   React.useEffect(() => {
     const scroll = localStorage.getItem("scroll")
-    // console.log("獲取 scroll", scroll)
+    console.log("獲取 scroll", scroll)
     if (scroll && pageLoad) {
-      // console.log("設定 scroll", scroll)
+      console.log("設定 scroll", scroll)
       window.scrollTo(0, parseInt(scroll))
     }
   }, [pageLoad])
@@ -38,7 +38,7 @@ const Providers = ({
       // 判斷 頁面載入完成
       if (!pageLoad) return
       localStorage.setItem("scroll", window.scrollY.toString())
-      // console.log("儲存 scroll", window.scrollY)
+      console.log("儲存 scroll", window.scrollY)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)

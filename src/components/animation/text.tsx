@@ -85,7 +85,7 @@ const AnimatedText = ({ text, delay, el: Wrapper = "div", className }: AnimatedT
         }
       })
       .flat()
-    console.log("splitText", splitText)
+    // console.log("splitText", splitText)
     textList = [splitText]
   }
 
