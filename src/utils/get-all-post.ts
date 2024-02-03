@@ -83,10 +83,12 @@ const getAllPost = async (type: string, page?: number, category?: string, tag?: 
   // console.log({ AllPosts })
   if (type === "all") {
     // 輸出目前頁數的文章
-    if (page) {
-      AllPosts = AllPosts.slice((page - 1) * limit, page * limit)
-    }
-
+    // if (page) {
+    //   // 先判斷文章的 status 是否為發布
+    //   // 在做分頁
+    //   // AllPosts = AllPosts.slice((page - 1) * limit, page * limit)
+    // }
+    console.log({ AllPosts })
     // 獲取全部欄位
     const AllPostsProperties = Object.entries(collectionData.recordMap.collection)[0][1].value
       .schema
@@ -131,7 +133,7 @@ const getAllPost = async (type: string, page?: number, category?: string, tag?: 
         }
       })
     )
-
+    console.log({ AllPostsList })
     AllPostsList = AllPostsList.filter((item) => item !== null && item.status === "發布")
 
     if (category) {
@@ -142,11 +144,33 @@ const getAllPost = async (type: string, page?: number, category?: string, tag?: 
       AllPostsList = AllPostsList.filter((item) => item!.tags.includes(tag))
     }
 
+    if (page) {
+      AllPostsList = AllPostsList.slice((page - 1) * limit, page * limit)
+    }
+
     return AllPostsList
   }
 
   if (type === "total") {
-    return AllPosts.length
+    // 判斷文章的 status 是否為發布
+    // 在輸出文章的總數
+    let total = 0
+    const AllPostsProperties = Object.entries(collectionData.recordMap.collection)[0][1].value
+      .schema
+    await Promise.all(
+      AllPosts.map(async (item) => {
+        const block = collectionData.recordMap.block[item].value
+        try {
+          const properties: Properties = await getPostProperties(AllPostsProperties, block)
+          if (properties.status === "發布") {
+            total++
+          }
+        } catch (error) {
+          return null
+        }
+      })
+    )
+    return total
   }
 }
 

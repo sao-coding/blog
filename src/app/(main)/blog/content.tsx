@@ -94,7 +94,8 @@ const Content = () => {
           </>
         ) : (
           <>
-            {Array.from({ length: pageTotal?.total / 2 }, (_, i) => (
+            {/* 除不盡的話 +1 */}
+            {Array.from({ length: Math.ceil(pageTotal.total / 2) }, (_, i) => (
               <button
                 key={i}
                 className={cx(
