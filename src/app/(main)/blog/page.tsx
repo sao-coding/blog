@@ -21,7 +21,7 @@ const BlogPage = () => {
           onClick={handleDown}
         />
       </div> */}
-      <div id='layout' className='flex w-full flex-col gap-4 py-5 md:flex-row md:py-20'>
+      <div id='layout' className='mb-20 flex w-full flex-col gap-4 py-5 md:flex-row md:py-20'>
         <Suspense>
           <Content />
         </Suspense>
