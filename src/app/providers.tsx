@@ -24,25 +24,29 @@ const Providers = ({
 
   React.useEffect(() => {
     const scroll = localStorage.getItem("scroll")
-    console.log("獲取 scroll", scroll)
-    if (scroll && pageLoad) {
+    // console.log("獲取 scroll", scroll)
+    // if (scroll && pageLoad) {
+    //   console.log("設定 scroll", scroll)
+    //   window.scrollTo(0, parseInt(scroll))
+    // }
+    if (scroll) {
       console.log("設定 scroll", scroll)
       window.scrollTo(0, parseInt(scroll))
     }
-  }, [pageLoad])
+  }, [])
 
   // 獲取 scroll 位置 並存入 localStorage
 
   React.useEffect(() => {
     const handleScroll = () => {
       // 判斷 頁面載入完成
-      if (!pageLoad) return
+      // if (!pageLoad) return
       localStorage.setItem("scroll", window.scrollY.toString())
       console.log("儲存 scroll", window.scrollY)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [pageLoad])
+  }, [])
 
   // useEffect(() => {
   //   const writeLog = async () => {

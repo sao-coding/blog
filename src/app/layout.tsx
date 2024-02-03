@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Script from "next/script"
 
+import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
 import Providers from "./providers"
@@ -30,6 +31,7 @@ export default function RootLayout({
             id='universe'
             className='pointer-events-none fixed left-0 top-0 z-[1] m-0 block h-full w-full border-0 p-0 outline-0'
           />
+          <Footer />
           <Script src='/js/universe.js' async defer strategy='afterInteractive' />
         </Providers>
       </body>

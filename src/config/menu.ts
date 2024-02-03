@@ -7,7 +7,7 @@ import {
   IconCategory,
   IconHome,
   IconSignature,
-  IconTags,
+  // IconTags,
   IconUser
 } from "@tabler/icons-react"
 
@@ -33,11 +33,11 @@ export const NAV_LINKS: NavLinks = [
     href: "/categories",
     text: "分類"
   },
-  {
-    icon: IconTags,
-    href: "/tags",
-    text: "標籤"
-  },
+  // {
+  //   icon: IconTags,
+  //   href: "/tags",
+  //   text: "標籤"
+  // },
   {
     icon: IconUser,
     href: "/about",

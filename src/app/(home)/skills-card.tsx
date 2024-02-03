@@ -90,28 +90,27 @@ const SkillsCard = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6 }}
+      className='flex w-full flex-col gap-2 rounded-3xl bg-black/50 p-4'
     >
-      <div className='flex w-full flex-col gap-2 rounded-3xl bg-black/50 p-4'>
-        <div className='flex items-center gap-2'>
-          <IconBolt />
-          <h2>技能</h2>
-        </div>
-        <Marquee className='py-4' fade pauseOnHover>
-          {languageSkills.map((Icon, i) => (
-            <Icon key={i} className='h-12 w-12' />
-          ))}
-        </Marquee>
-        <Marquee className='py-4' reverse fade pauseOnHover>
-          {toolSkills.map((Icon, i) => (
-            <Icon key={i} className='h-12 w-12' />
-          ))}
-        </Marquee>
-        <Marquee className='py-4' fade pauseOnHover>
-          {frameworkSkills.map((Icon, i) => (
-            <Icon key={i} className='h-12 w-12' />
-          ))}
-        </Marquee>
+      <div className='flex items-center gap-2'>
+        <IconBolt />
+        <h2>技能</h2>
       </div>
+      <Marquee className='py-4' fade pauseOnHover>
+        {languageSkills.map((Icon, i) => (
+          <Icon key={i} className='h-12 w-12' />
+        ))}
+      </Marquee>
+      <Marquee className='py-4' reverse fade pauseOnHover>
+        {toolSkills.map((Icon, i) => (
+          <Icon key={i} className='h-12 w-12' />
+        ))}
+      </Marquee>
+      <Marquee className='py-4' fade pauseOnHover>
+        {frameworkSkills.map((Icon, i) => (
+          <Icon key={i} className='h-12 w-12' />
+        ))}
+      </Marquee>
     </motion.div>
   )
 }

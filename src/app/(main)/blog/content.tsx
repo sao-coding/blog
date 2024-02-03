@@ -36,34 +36,34 @@ const Content = () => {
     }
   })
 
-  React.useEffect(() => {
-    if (!isLoading && !isPageTotalLoading) {
-      setPageLoad(true)
-      console.log("頁面載入完成")
-    }
-  }, [isLoading, isPageTotalLoading])
+  // React.useEffect(() => {
+  //   if (!isLoading && !isPageTotalLoading) {
+  //     setPageLoad(true)
+  //     console.log("頁面載入完成")
+  //   }
+  // }, [isLoading, isPageTotalLoading])
 
-  React.useEffect(() => {
-    // 滾動到特定元素
-    const handleDown = () => {
-      if (isLoading) return
-      // 判斷首次載入 用 window name
-      if (window.name === "") {
-        window.name = "loaded"
-        return
-      }
-      // 若沒有 localStorage scroll 位置
+  // React.useEffect(() => {
+  //   // 滾動到特定元素
+  //   const handleDown = () => {
+  //     if (isLoading) return
+  //     // 判斷首次載入 用 window name
+  //     if (window.name === "") {
+  //       window.name = "loaded"
+  //       return
+  //     }
+  //     // 若沒有 localStorage scroll 位置
 
-      if (localStorage.getItem("page") === "true") {
-        console.log("滑動到特定元素")
-        const element = document.querySelector("#layout")
-        console.log(element)
-        element?.scrollIntoView({ behavior: "smooth" })
-      }
-      localStorage.setItem("page", false.toString())
-    }
-    handleDown()
-  }, [currentPage, isLoading])
+  //     if (localStorage.getItem("page") === "true") {
+  //       console.log("滑動到特定元素")
+  //       const element = document.querySelector("#layout")
+  //       console.log(element)
+  //       element?.scrollIntoView({ behavior: "smooth" })
+  //     }
+  //     localStorage.setItem("page", false.toString())
+  //   }
+  //   handleDown()
+  // }, [currentPage, isLoading])
 
   return (
     <div className='flex w-full flex-col gap-4 md:w-3/4'>
@@ -105,8 +105,8 @@ const Content = () => {
                   router.push(`/blog?page=${i + 1}`)
                   // 設定 scroll 在 #layout 元素上
                   // window.innerHeight
-                  localStorage.setItem("scroll", window.innerHeight.toString())
-                  localStorage.setItem("page", true.toString())
+                  // localStorage.setItem("scroll", window.innerHeight.toString())
+                  // localStorage.setItem("page", true.toString())
                 }}
               >
                 {i + 1}
